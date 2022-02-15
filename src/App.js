@@ -9,10 +9,12 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPage] = useState(9);
+  const api = "";
+  const hash = "";
 
   useEffect(() => {
     fetch(
-      "https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=26d343dfc1d2f4cc6bb34a26fcb6b725&hash=589a5af6ad1e29e0df7cbc2289fecac3&limit=100&offset=100"
+      "https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=$api&hash=$hash&limit=100&offset=100"
     )
       .then((response) => {
         return response.json();
